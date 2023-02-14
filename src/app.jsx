@@ -39,19 +39,21 @@ function Total(props) {
 }
 
 export function App() {
-  const course = "Half Stack app development";
+  const course = {
+    name: "Half Stack app development",
 
-  const parts = [
-    { name: "Fundamentals of React", exercies: 10 },
-    { name: "Using props to pass data", exercies: 7 },
-    { name: "State of a component", exercies: 14 },
-  ];
+    parts: [
+      { name: "Fundamentals of React", exercies: 10 },
+      { name: "Using props to pass data", exercies: 7 },
+      { name: "State of a component", exercies: 14 },
+    ],
+  };
 
   return (
     <>
-      <Header course={course} />
-      <ExerciseList parts={parts} />
-      <Total parts={parts} />
+      <Header course={course.name} />
+      <ExerciseList parts={course.parts} />
+      <Total parts={course.parts} />
     </>
   );
 }
