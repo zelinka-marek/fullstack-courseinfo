@@ -15,20 +15,21 @@ function ExerciseItem(props) {
 }
 
 function ExerciseList(props) {
-  const { part1, part2, part3 } = props;
+  const { parts } = props;
 
   return (
     <div>
-      <ExerciseItem part={part1} />
-      <ExerciseItem part={part2} />
-      <ExerciseItem part={part3} />
+      <ExerciseItem part={parts[0]} />
+      <ExerciseItem part={parts[1]} />
+      <ExerciseItem part={parts[2]} />
     </div>
   );
 }
 
 function Total(props) {
-  const { part1, part2, part3 } = props;
-  const totalExercises = part1.exercies + part2.exercies + part3.exercies;
+  const { parts } = props;
+  const totalExercises =
+    parts[0].exercies + parts[1].exercies + parts[2].exercies;
 
   return (
     <p>
@@ -40,15 +41,17 @@ function Total(props) {
 export function App() {
   const course = "Half Stack app development";
 
-  const part1 = { name: "Fundamentals of React", exercies: 10 };
-  const part2 = { name: "Using props to pass data", exercies: 7 };
-  const part3 = { name: "State of a component", exercies: 14 };
+  const parts = [
+    { name: "Fundamentals of React", exercies: 10 },
+    { name: "Using props to pass data", exercies: 7 },
+    { name: "State of a component", exercies: 14 },
+  ];
 
   return (
     <>
       <Header course={course} />
-      <ExerciseList part1={part1} part2={part2} part3={part3} />
-      <Total part1={part1} part2={part2} part3={part3} />
+      <ExerciseList parts={parts} />
+      <Total parts={parts} />
     </>
   );
 }
