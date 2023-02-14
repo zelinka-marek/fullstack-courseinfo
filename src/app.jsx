@@ -4,20 +4,24 @@ function Header(props) {
   return <h1>{course}</h1>;
 }
 
+function ExerciseItem(props) {
+  const { part, exercies } = props;
+
+  return (
+    <p>
+      {part} <strong>{exercies}</strong>
+    </p>
+  );
+}
+
 function ExerciseList(props) {
   const { part1, exercies1, part2, exercies2, part3, exercies3 } = props;
 
   return (
     <div>
-      <p>
-        {part1} <strong>{exercies1}</strong>
-      </p>
-      <p>
-        {part2} <strong>{exercies2}</strong>
-      </p>
-      <p>
-        {part3} <strong>{exercies3}</strong>
-      </p>
+      <ExerciseItem part={part1} exercies={exercies1} />
+      <ExerciseItem part={part2} exercies={exercies2} />
+      <ExerciseItem part={part3} exercies={exercies3} />
     </div>
   );
 }
