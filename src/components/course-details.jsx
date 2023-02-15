@@ -1,7 +1,7 @@
 function Header(props) {
   const { name } = props;
 
-  return <h1>{name}</h1>;
+  return <h2>{name}</h2>;
 }
 
 function ExerciseItem(props) {
