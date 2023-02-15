@@ -40,14 +40,14 @@ function Total(props) {
   );
 }
 
-export function CourseDetails(props) {
-  const { course } = props;
+export function Course(props) {
+  const { name, parts } = props;
 
   return (
     <div>
-      <Header name={course.name} />
-      <ExerciseList parts={course.parts} />
-      <Total parts={course.parts} />
+      <Header name={name} />
+      <ExerciseList parts={parts} />
+      <Total parts={parts} />
     </div>
   );
 }

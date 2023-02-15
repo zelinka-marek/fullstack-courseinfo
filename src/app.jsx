@@ -1,4 +1,4 @@
-import { CourseDetails } from "./components/course-details";
+import { Course } from "./components/course";
 
 export function App() {
   const courses = [
@@ -27,7 +27,7 @@ export function App() {
     <>
       <h1>Web development curriculum</h1>
       {courses.map((course) => (
-        <CourseDetails key={course.id} course={course} />
+        <Course key={course.id} name={course.name} parts={course.parts} />
       ))}
     </>
   );
