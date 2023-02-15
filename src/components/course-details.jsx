@@ -35,7 +35,7 @@ function Total(props) {
 
   return (
     <p>
-      Number of exercies <strong>{totalExercises}</strong>
+      Total of <strong>{totalExercises}</strong> exercies
     </p>
   );
 }
